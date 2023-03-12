@@ -1,0 +1,138 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LABORATORIO_1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ejercicio 1: Operaciones Artimeticas");
+
+            Console.WriteLine("Ingrese un numero: ");
+            int n1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Ingrese otro número ");
+            int n2 = Convert.ToInt32(Console.ReadLine());
+
+
+            // SINTAXIS PARA HACER UNA SUMA
+            int suma = n1 + n2;
+            Console.WriteLine(n1 + " + " + n2 + " = " + suma);
+
+            // SINTAXIS PARA HACER UNA RESTA
+            int resta = n1 - n2;
+            Console.WriteLine(n1 + " - " + n2 + " = " + resta);
+
+            // SINTAXIS PARA HACER UNA MULTIPLICACIÓN
+            int multiplicacion = n1 * n2;
+            Console.WriteLine(n1 + " * " + n2 + " = " + multiplicacion);
+
+            // SINTAXIS PARA HACER UNA DIVISIÓN DEVOLVIENDO UN NÚMERO ENTERO
+            int div = n1 / n2;
+            Console.WriteLine(n1 + " / " + n2 + " = " + div);
+
+            // SINTAXIS PARA HACER UN MOD (OBTENER EL RESIDUO DE UNA DIVISIÓN)
+            int mod = n1 % n2;
+            Console.WriteLine(n1 + " mod " + n2 + " = " + mod);
+
+
+            /* SINTAXIS PARA HACER UNA DIVISIÓN DEVOLVIENDO UN NÚMERO DECIMAL, PARA ESTA HAY QUE CAMBIAR EL TIPO DE VARIABLE DE ENTERO (INT) a DECIMAL(DOUBLE) PARA QUE EL CAMBIO
+             HAGA EFECTO HAY QUE GUARDAR LA CONVERSIÓN DE VARIABLES EN OTRAS VARIABLES*/
+
+            Convert.ToDouble(n1);
+
+            double n3 = Convert.ToDouble(n1);
+
+            double division = n3 / n2;
+
+            Console.WriteLine(n1 + " div " + n2 + " = " + division);
+
+
+            Console.WriteLine("Ejercicio 2: Operaciones booleanas");
+
+
+            if (n1 == n2)
+            {
+                Console.WriteLine(" Los números son iguales");
+            }
+            else
+            {
+                if (n1 > n2)
+                {
+                    Console.WriteLine("El número 1 es mayor que el número dos");
+                }
+                else
+                {
+                    Console.WriteLine("El número 2 es mayor que el número 1");
+                }
+            }
+
+            Console.WriteLine("Ejercicio 3: Jerarquia de operaciones");
+
+            double a;
+            double b;
+            double c;
+            double d;
+            double e;
+            double f;
+            double g;
+
+            Console.WriteLine("Ingresa el número a");
+            a = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Ingresa el número b");
+            b = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Ingresa el número c");
+            c = Convert.ToDouble(Console.ReadLine());
+
+
+            d = a * b + c;
+            e = a *(b + c);
+            f = a / b * c;
+            g = (3*a +2*b)/ (c * c);
+
+
+
+
+            Console.WriteLine(" El resultado de  a * b + c es igual  " + d);
+            Console.WriteLine(" El resultado de  a *(b + c) es igual  " + e);
+            Console.WriteLine(" El resultado de   f = a / b * c es igual  " + f);
+            Console.WriteLine(" El resultado de (3a+2b)/ (c * c) es igual  " + g);
+
+
+
+            Console.WriteLine(" Ejercicio 4: Calcule el resultado de la expresión cuadratica ");
+
+            double h, i;
+
+
+            h = -b + (Math.Sqrt((b * b) -(4 * a * c))) / (2 * a);
+            i = -b - (Math.Sqrt((b * b) - (4 * a * c))) / (2 * a);
+
+            Console.WriteLine("El resultado de la expresión cuadrática es: " + h + " - " + i );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            Console.ReadKey();  
+        }
+    }
+}
