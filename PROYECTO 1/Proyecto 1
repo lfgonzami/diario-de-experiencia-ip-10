@@ -1,0 +1,274 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ProyectoNo1_1239220_LG
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            DateTime fecha = DateTime.Today;
+            string respuesta = "";
+            string nit = "";
+            string telefono = "";
+            string correo = "";
+            string nombre = "";
+            char opcion = 'S';
+            int cant001 = 0;
+            double precio001 = 0;
+            int cant002 = 0;
+            double precio002 = 0;
+            int cant003 = 0;
+            double precio003 = 0;
+            int cant004 = 0;
+            double precio004 = 0;
+            int cant005 = 0;
+            double precio005 = 0;
+            double preciot = 0;
+            string codigo;
+            string numfac = "";
+            int n = 1;
+            int punac = 0;
+            int p = 0;
+            int punfac = 0;
+            string volver = "";
+            string facturación = "";
+            int metododepago = 0;
+            int puntosGanados = 0;
+            double iva = 0;
+            double isr = 0;
+            double preciof = 0;
+
+            do
+            {
+                Console.WriteLine("¿Desea entrar al programa? (Escriba <Si>)");
+                volver = Convert.ToString(Console.ReadLine());
+                while (volver == "Si")
+                {
+                    Console.Clear();
+                    Console.WriteLine("Menu de opciones");
+                    Console.WriteLine("Precione <1> si desea entrar al menú de Facturación");
+                    Console.WriteLine("Presione <2> si desea entrar al menú de Reportes de facturación");
+                    Console.WriteLine("Precione <3> si desea salirse del programa");
+                    respuesta = Convert.ToString(Console.ReadLine());
+                    switch (respuesta)
+                    {
+                        case "1":
+                            Console.WriteLine("Ingresando al menú FACTURACIÓN (Escriba <Si>)");
+                            facturación = Convert.ToString(Console.ReadLine());
+                            do
+                            {
+                                Console.WriteLine("Ingrese el nombre del cliente");
+                                nombre = Convert.ToString(Console.ReadLine());
+                                Console.WriteLine("Ingrese el NIT del cliente");
+                                nit = Convert.ToString(Console.ReadLine());
+                                Console.WriteLine("Ingrese el número telefónico del cliente");
+                                telefono = Convert.ToString(Console.ReadLine());
+                                Console.WriteLine("Ingrese el correo electrónico del cliente");
+                                correo = Convert.ToString(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("Ingrese el código del producto");
+                                    codigo = Convert.ToString(Console.ReadLine());
+                                    switch (codigo)
+                                    {
+                                        case "001":
+                                            Console.WriteLine("Pan frances");
+                                            Console.WriteLine("Ingrese la cantidad del producto");
+                                            cant001 = Convert.ToInt32(Console.ReadLine());
+                                            precio001 = 1.10 * cant001;
+                                            Console.WriteLine("El precio es de: " + precio001);
+                                            Console.WriteLine("¿Desea agregar otro producto? S=Si y N=No");
+                                            opcion = Convert.ToChar(Console.ReadLine());
+                                            break;
+                                        case "002":
+                                            Console.WriteLine("Libra Azucar");
+                                            Console.WriteLine("Ingrese la cantidad del producto");
+                                            cant002 = Convert.ToInt32(Console.ReadLine());
+                                            precio002 = 5.00 * cant002;
+                                            Console.WriteLine("El precio es de: " + precio002);
+                                            Console.WriteLine("¿Desea agregar otro producto? S=Si y N=No");
+                                            opcion = Convert.ToChar(Console.ReadLine());
+                                            break;
+                                        case "003":
+                                            Console.WriteLine("Caja de galletas");
+                                            Console.WriteLine("Ingrese la cantidad del producto");
+                                            cant003 = Convert.ToInt32(Console.ReadLine());
+                                            precio003 = 7.30 * cant003;
+                                            Console.WriteLine("El precio es de: " + precio003);
+                                            Console.WriteLine("¿Desea agregar otro producto? S=Si y N=No");
+                                            opcion = Convert.ToChar(Console.ReadLine());
+                                            break;
+                                        case "004":
+                                            Console.WriteLine("Caja de granola");
+                                            Console.WriteLine("Ingrese la cantidad del producto");
+                                            cant004 = Convert.ToInt32(Console.ReadLine());
+                                            precio004 = 32.50 * cant004;
+                                            Console.WriteLine("El precio es de: " + precio004);
+                                            Console.WriteLine("¿Desea agregar otro producto? S=Si y N=No");
+                                            opcion = Convert.ToChar(Console.ReadLine());
+                                            break;
+                                        case "005":
+                                            Console.WriteLine("Litro de jugo de naranja");
+                                            Console.WriteLine("Ingrese la cantidad del producto");
+                                            cant005 = Convert.ToInt32(Console.ReadLine());
+                                            precio005 = 17.95 * cant005;
+                                            Console.WriteLine("El precio es de: " + precio005);
+                                            Console.WriteLine("¿Desea agregar otro producto? S=Si y N=No");
+                                            opcion = Convert.ToChar(Console.ReadLine());
+                                            break;
+                                        default:
+                                            Console.WriteLine("Ingrese un código válido");
+                                            break;
+
+                                    }
+
+                                } while (opcion == 'S');
+                                preciot = precio001 + precio002 + precio003 + precio004 + precio005;
+                                Console.WriteLine("Su total es de: " + preciot);
+
+                                Console.WriteLine("Desea pagar con Tarjeta = 1 o  Efectivo = 2");
+                                metododepago = Convert.ToInt32(Console.ReadLine());
+
+                                switch (metododepago)
+                                {
+
+                                    case 1:
+
+
+                                        Console.WriteLine(" Su pago sera con tarjeta ");
+
+
+                                        if (preciot < 50.0)
+                                        {
+                                            puntosGanados = (int)Math.Floor(preciot / 10.0);
+                                        }
+                                        else if (preciot >= 50 && preciot < 150.0)
+                                        {
+                                            puntosGanados = (int)Math.Floor(preciot / 10.0) * 2;
+                                        }
+                                        else
+                                        {
+                                            puntosGanados = (int)Math.Floor(preciot / 15.0) * 3;
+                                        }
+
+                                        Console.WriteLine("Puntos ganados por esta compra = " + puntosGanados);
+                                        break;
+
+                                    case 2:
+                                        Console.WriteLine("Su pago sera en efectivo");
+                                        break;
+
+                                    default:
+                                        Console.WriteLine("Por favor elige una opcion válida");
+                                        Console.WriteLine("Desea pagar con Tarjeta = 1 o  Efectivo = 2");
+                                        break;
+
+
+
+
+
+
+                                }
+
+
+                                Console.WriteLine("¿Cuenta con puntos acumulados? S=Si y N=No");
+                                opcion = Convert.ToChar(Console.ReadLine());
+                                if (opcion == 'S')
+                                {
+                                    Console.WriteLine("Escribe la cantidad de puntos acumulados de tu factura anterior");
+                                    punac = Convert.ToInt32(Console.ReadLine());
+                                }
+                                Random lol = new Random();
+                                int numfa = 0;
+                                int x = lol.Next(1, 1001);
+                                int punround = 0;
+                                n = cant001 + cant002 + cant003 + cant004 + cant005;
+                                punround = Convert.ToInt32(Math.Round(preciot));
+                                punfac = (punround % 10) + punac;
+                                p = (punfac / 10) + punac;
+                                numfa = ((x + p * p) + (2021 * n)) % 1000;
+                                numfac = Convert.ToString(numfa);
+                                numfac = numfac.PadLeft(4, '0');
+                                Console.WriteLine("------------SupermercadoPublicMart------------");
+                                Console.WriteLine("Fecha: " + fecha);
+                                Console.WriteLine("Número de factura: " + numfac);
+                                Console.WriteLine("NIT: " + nit);
+                                Console.WriteLine("Nombre: " + nombre);
+                                Console.WriteLine("Productos por compra       " + "Cantidad " + "Subtotal");
+                                if (cant001 > 0)
+                                {
+                                    Console.WriteLine("Pan frances:                                    " + cant001 + "        Q" + precio001);
+                                }
+                                if (cant002 > 0)
+                                {
+                                    Console.WriteLine("Libra de azucar:                                " + cant002 + "        Q" + precio002);
+                                }
+                                if (cant003 > 0)
+                                {
+                                    Console.WriteLine("Caja de galletas:                               " + cant003 + "        Q" + precio003);
+                                }
+                                if (cant004 > 0)
+                                {
+                                    Console.WriteLine("Caja de granola:                                " + cant004 + "        Q" + precio004);
+                                }
+                                if (cant005 > 0)
+                                {
+                                    Console.WriteLine("Litro de jugo de naranja:                       " + cant005 + "        Q" + precio005);
+
+                                }
+
+
+                                isr = preciot * 0.05;
+
+                                iva = preciot * 0.12;
+
+                                preciof = preciot + iva + isr;
+                                Console.WriteLine("IVA = " + "                                                             Q" + iva);
+                                Console.WriteLine("ISR = " + "                                                             Q" + isr);
+                                Console.WriteLine("Su total es de:              " + "                                      Q" + preciof);
+                                Console.WriteLine("Puntos generados:            " + "                                       " + puntosGanados);
+                                Console.WriteLine("Su factura ha sido enviada a su correo electronico");
+                                Console.WriteLine("¿Desea agregar otra factura? (Escriba <Si> o <No>)");
+                                facturación = Convert.ToString(Console.ReadLine());
+
+                            } while (facturación == "Si");
+                            break;
+
+                        case "2":
+                            Console.WriteLine("Ingresando al menú REPORTES DE FACTURACIÓN");
+                            double preciofac = 0;
+                            int tolfac = 1;
+                            preciofac = preciofac + preciof;
+                            Console.WriteLine("Total de facturas realizadas: " + tolfac);
+                            Console.WriteLine("Total de productos vendidos: " + n);
+                            Console.WriteLine("Pan frances" + cant001 + precio001);
+                            Console.WriteLine("Libra de azucar" + cant002 + precio002);
+                            Console.WriteLine("Caja de galletas" + cant003 + precio003);
+                            Console.WriteLine("Caja de granola" + cant004 + precio004);
+                            Console.WriteLine("Litro de jugo de naranja" + cant005 + precio005);
+                            Console.WriteLine("Total de puntos generados: " + punfac);
+                            Console.WriteLine("Total de las ventas: " + preciofac);
+                            break;
+                        case "3":
+                            Console.WriteLine("Saliendo de la aplicación...");
+                            Console.WriteLine("Presione INTRO para cerrar el programa");
+                            break;
+                        default:
+                            Console.WriteLine("Ingrese una opción válida");
+                            Console.WriteLine("Presione INTRO para volver al menú de opciones");
+                            break;
+                    }
+                    Console.WriteLine("¿Desea volver al menú? (Responder con <Si> o un <No>)");
+                    volver = Convert.ToString(Console.ReadLine());
+                }
+            } while (respuesta == "");
+            Console.ReadKey();
+
+
+        }
+    }
+}
