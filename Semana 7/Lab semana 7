@@ -1,0 +1,94 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace L5_LG_1239220
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+           
+
+
+            Console.WriteLine("EJERCICIO NO. 1 ");
+
+            Console.WriteLine("Ingrese un número entero");
+            
+            int no1 = Convert.ToInt32(Console.ReadLine());
+
+            if (no1 > 0)
+            {
+                Console.WriteLine("El número ingresado es positivo");
+            }
+            else if (no1 < 0)
+            {
+                Console.WriteLine("El número ingresado es negativo");
+            }
+            else
+            {
+                Console.WriteLine("El número ingresado es cero");
+            }
+
+            Console.WriteLine("Resultado : " + no1);
+
+            
+
+            Console.WriteLine("EJERCICIO NO. 2 ");
+
+    
+
+            Console.Write("Ingresa el número del día de la semana (1-7): ");
+            int nodia = Convert.ToInt32(Console.ReadLine());
+
+
+            if (nodia < 1 || nodia > 7)
+            {
+                Console.WriteLine("Error: El número a ingresar debe estar contenido entre 1 y 7");
+            }
+            else
+            {
+                string dia = "";
+                if (nodia == 1)
+                {
+                    dia = "lunes";
+                }
+                else if (nodia == 2)
+                {
+                    dia = "martes";
+                }
+                else if (nodia == 3)
+                {
+                    dia = "miércoles";
+                }
+                else if (nodia == 4)
+                {
+                    dia = "jueves";
+                }
+                else if (nodia == 5)
+                {
+                    dia = "viernes";
+                }
+                else if (nodia == 6)
+                {
+                    dia = "sábado";
+                }
+                else if (nodia == 7)
+                {
+                    dia = "domingo";
+                }
+
+                Console.WriteLine("El dia es : " + dia);
+
+            }
+
+
+                Console.ReadKey();
+        }
+    }
+}
