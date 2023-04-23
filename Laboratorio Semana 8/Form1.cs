@@ -9,7 +9,7 @@ namespace Lab8
             // AGREGAR VALORES A LA COMBO BOX
             cmbSeleccion.Items.Add("Sumatoria");
             cmbSeleccion.Items.Add("Tablas de multiplicar");
-            cmbSeleccion.Items.Add("Nï¿½mero Perfecto");
+            cmbSeleccion.Items.Add("Número Perfecto");
 
         }
 
@@ -25,13 +25,13 @@ namespace Lab8
             {
 
                 case 0:
-                    tctSeleccion.SelectedTab = tabSumatoria; //MUESTRA LA PESTAï¿½A DE SUMATORIA
+                    tctSeleccion.SelectedTab = tabSumatoria; //MUESTRA LA PESTAÑA DE SUMATORIA
                     break;
                 case 1:
-                    tctSeleccion.SelectedTab = tabTablas; // MUESTA LA PESTAï¿½A DE TABLAS
+                    tctSeleccion.SelectedTab = tabTablas; // MUESTA LA PESTAÑA DE TABLAS
                     break;
                 case 2:
-                    tctSeleccion.SelectedTab = tabNPerfecto; // MUESTRA LA PESTAï¿½A DE Nï¿½MERO PERFECTO
+                    tctSeleccion.SelectedTab = tabNPerfecto; // MUESTRA LA PESTAÑA DE NÚMERO PERFECTO
                     break;
 
                 default:
@@ -108,11 +108,11 @@ namespace Lab8
 
                 if (sum == num)
                 {
-                    lblResultadoPerfecto.Text = "El nï¿½mero " + num.ToString() + " es perfecto.";
+                    lblResultadoPerfecto.Text = "El número " + num.ToString() + " es perfecto.";
                 }
                 else
                 {
-                    lblResultadoPerfecto.Text = "El nï¿½mero " + num.ToString() + " no es perfecto.";
+                    lblResultadoPerfecto.Text = "El número " + num.ToString() + " no es perfecto.";
                 }
 
 
